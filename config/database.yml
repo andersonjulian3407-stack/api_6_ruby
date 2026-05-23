@@ -1,0 +1,24 @@
+# PostgreSQL — Companies API
+# Variables de entorno definidas en .env (nunca subir a git)
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("DB_USER", "postgres") %>
+  password: <%= ENV.fetch("DB_PASSWORD", "") %>
+  host: <%= ENV.fetch("DB_HOST", "localhost") %>
+  port: <%= ENV.fetch("DB_PORT", "5432") %>
+
+development:
+  <<: *default
+  database: companies_api_development
+
+test:
+  <<: *default
+  database: companies_api_test
+
+production:
+  <<: *default
+  database: companies_api_production
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
