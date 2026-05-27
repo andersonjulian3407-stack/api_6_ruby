@@ -1,5 +1,4 @@
-# Infrastructure Layer — Repositorio concreto de Compañías
-# Implementa CompanyRepositoryInterface usando Active Record como ORM
+# ONION: Capa de Infraestructura - Repositorio concreto que implementa CompanyRepositoryInterface usando el ORM
 # REGLA CLAVE: los métodos create/update NO llaman .save — eso lo hace el Unit of Work
 class CompanyRepository
   include CompanyRepositoryInterface

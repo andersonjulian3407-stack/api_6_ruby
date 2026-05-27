@@ -1,6 +1,4 @@
-# Application Layer — Servicio de Compañías
-# Orquesta las operaciones de negocio usando UnitOfWork y Repositories.
-# Flujo: Controller → CompanyService → UnitOfWork → CompanyRepository → ActiveRecord → PostgreSQL
+# ONION: Capa de Aplicación - Contiene la lógica de negocio y orquesta los casos de uso
 class CompanyService
   def initialize(uow: UnitOfWork.new)
     @uow = uow

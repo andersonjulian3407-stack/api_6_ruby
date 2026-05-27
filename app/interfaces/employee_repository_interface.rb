@@ -1,4 +1,4 @@
-# Domain Layer — Contrato del repositorio de empleados
+# ONION: Capa de Dominio - Interfaz que define las operaciones permitidas para el repositorio de empleados
 module EmployeeRepositoryInterface
   def all_employees
     raise NotImplementedError, "#{self.class}#all_employees no implementado"

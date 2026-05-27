@@ -1,6 +1,4 @@
-# API Layer — Controller de Compañías
-# Recibe requests HTTP → delega a CompanyService → retorna JSON
-# Flujo: Route → CompaniesController → CompanyService → UnitOfWork → Repository → ORM → DB
+# ONION: Capa Externa (UI/Presentación) - Recibe peticiones HTTP y responde con JSON
 module Api
   class CompaniesController < ApplicationController
     before_action :set_service
@@ -22,8 +20,6 @@ module Api
       dto = CompanyDto.new(company_params)
       company = @service.create(dto)
       render json: company, status: :created
-    rescue ActiveRecord::RecordInvalid => e
-      render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
     # PUT/PATCH /api/companias/:id
@@ -31,8 +27,6 @@ module Api
       dto = CompanyDto.new(company_params)
       company = @service.update(params[:id], dto)
       render json: company, status: :ok
-    rescue ActiveRecord::RecordInvalid => e
-      render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
     # DELETE /api/companias/:id
@@ -63,10 +57,6 @@ module Api
 
       result = @service.create_with_employees(company_data, employees_data)
       render json: result, status: :created
-    rescue ActiveRecord::RecordInvalid => e
-      render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
-    rescue => e
-      render json: { error: "Error en transacción: #{e.message}" }, status: :internal_server_error
     end
 
     private

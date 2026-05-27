@@ -1,5 +1,4 @@
-# Infrastructure Layer — Repositorio concreto de Empleados
-# Implementa EmployeeRepositoryInterface usando Active Record como ORM
+# ONION: Capa de Infraestructura - Repositorio concreto que implementa EmployeeRepositoryInterface usando el ORM
 # REGLA CLAVE: los métodos create/update NO llaman .save — eso lo hace el Unit of Work
 class EmployeeRepository
   include EmployeeRepositoryInterface

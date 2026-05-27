@@ -1,5 +1,4 @@
-# Domain Layer — Modelo Employee
-# Representa la entidad Empleado con validaciones de negocio
+# ONION: Capa de Dominio (Núcleo) - Entidad de negocio que valida reglas internas de empleado
 class Employee < ApplicationRecord
   belongs_to :company
 

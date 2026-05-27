@@ -1,4 +1,4 @@
-# Infrastructure Layer — Unit of Work
+# ONION: Capa de Infraestructura - Gestiona la atomicidad y consistencia de transacciones en la base de datos
 #
 # PREGUNTAS OBLIGATORIAS RESUELTAS:
 # 1. ¿Qué es Unit of Work?

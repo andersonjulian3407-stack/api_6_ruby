@@ -1,6 +1,4 @@
-# Application Layer — DTO de Empleado
-# Data Transfer Object: transporta solo los campos que la API acepta,
-# incluyendo company_id como referencia de la relación.
+# ONION: Capa de Aplicación - Objeto de transferencia de datos de empleado
 class EmployeeDto
   attr_accessor :nombre, :apellido, :correo, :cargo, :salario, :company_id
 

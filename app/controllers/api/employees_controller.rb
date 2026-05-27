@@ -1,5 +1,4 @@
-# API Layer — Controller de Empleados
-# Recibe requests HTTP → delega a EmployeeService → retorna JSON
+# ONION: Capa Externa (UI/Presentación) - Recibe peticiones HTTP y responde con JSON
 module Api
   class EmployeesController < ApplicationController
     before_action :set_service
@@ -18,16 +17,12 @@ module Api
     def create
       dto = EmployeeDto.new(employee_params)
       render json: @service.create(dto), status: :created
-    rescue ActiveRecord::RecordInvalid => e
-      render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
     # PUT/PATCH /api/empleados/:id
     def update
       dto = EmployeeDto.new(employee_params)
       render json: @service.update(params[:id], dto), status: :ok
-    rescue ActiveRecord::RecordInvalid => e
-      render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
     # DELETE /api/empleados/:id

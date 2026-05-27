@@ -1,5 +1,4 @@
-# Application Layer — Servicio de Empleados
-# Flujo: Controller → EmployeeService → UnitOfWork → EmployeeRepository → ActiveRecord → PostgreSQL
+# ONION: Capa de Aplicación - Contiene la lógica de negocio y orquesta los casos de uso
 class EmployeeService
   def initialize(uow: UnitOfWork.new)
     @uow = uow

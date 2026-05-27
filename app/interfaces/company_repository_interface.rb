@@ -1,5 +1,4 @@
-# Domain Layer — Contrato del repositorio de compañías
-# Los repositorios concretos DEBEN implementar todos estos métodos
+# ONION: Capa de Dominio - Interfaz que define las operaciones permitidas para el repositorio de compañías
 module CompanyRepositoryInterface
   def all_companies
     raise NotImplementedError, "#{self.class}#all_companies no implementado"

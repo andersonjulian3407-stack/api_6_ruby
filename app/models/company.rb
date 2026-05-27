@@ -1,5 +1,4 @@
-# Domain Layer — Modelo Company
-# Representa la entidad Compañía con sus validaciones de negocio
+# ONION: Capa de Dominio (Núcleo) - Entidad de negocio que valida reglas internas de compañía
 class Company < ApplicationRecord
   has_many :employees, dependent: :destroy
 
